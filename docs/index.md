@@ -1,17 +1,5 @@
-# Welcome to MkDocs
+# Observing the Sky
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This package collects code and pedagogical snippets related to astronomical observations of the sky, particular with ground-based telescopes. It is being assembled in support of the University of Colorado Boulder course "ASTR3510: Observations and Instrumentation" starting in Fall 2022.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+We hope you may find it useful!

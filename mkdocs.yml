@@ -1,8 +1,15 @@
 site_name: cu-astr3510
 site_url: https://zkbt.github.com/cu-astr3510
 nav:
-    - Welcome: index.md
-    - Visualizations: photons.ipynb
+    - index.md
+    - installation.ipynb
+    - Concepts:
+      - concepts/catching-photons.ipynb
+      - concepts/chi-squared-fitting.ipynb
+    - Tools:
+      - tools/gaia.ipynb
+    - reference.md
+
 theme:
   name: "material"
   features:

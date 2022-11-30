@@ -1,4 +1,6 @@
 *.ipynb
+*.fits
+docs-coming-soon
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

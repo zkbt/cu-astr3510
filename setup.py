@@ -84,6 +84,7 @@ setup(
         "scipy",
         "matplotlib>=3.5",
         "astropy>=4.0",
+        "astroquery",
         "pandas",
         "tqdm",
     ],
