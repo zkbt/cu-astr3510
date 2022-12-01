@@ -248,12 +248,102 @@
       
       
         <label class="md-nav__link" for="__nav_3">
+          Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/plots/" class="md-nav__link">
+        🧮✏️📈 Plotting 1D Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/units/" class="md-nav__link">
+        📏🏋️☕️ Using Units
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/fits-files/" class="md-nav__link">
+        🌃🌅🌌 Loading FITS Images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/color-images/" class="md-nav__link">
+        🎨🌈🏞 Crafting Color Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
           Concepts
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Concepts" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Concepts
         </label>
@@ -306,18 +396,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_5">
           Tools
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tools" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Tools
         </label>
@@ -1674,14 +1764,19 @@ random_stars = get_gaia(random_center, radius=random_radius)</div>
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <div><i>QTable length=511</i>
-<table id="table4770893728" class="table-striped table-bordered table-condensed">
+<table id="table4695430800" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>G_gaia_mag</th><th>RP_gaia_mag</th><th>BP_gaia_mag</th><th>parallax</th><th>pmra</th><th>pmdec</th><th>distance_from_center</th><th>r_sloan_mag</th><th>i_sloan_mag</th><th>g_sloan_mag</th><th>V_johnsoncousins_mag</th><th>R_johnsoncousins_mag</th><th>I_johnsoncousins_mag</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mas</th><th>mas / yr</th><th>mas / yr</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th></tr></thead>
 <tr><td>123.46358938838631</td><td>67.88971682015931</td><td>20.226247787475586</td><td>18.9457950592041</td><td>21.279850006103516</td><td>2.4612139436267366</td><td>-1.5109944465762766</td><td>-0.9993581676749135</td><td>0.005120868239370292</td><td>20.55800437927246</td><td>19.56468391418457</td><td>22.2702579498291</td><td>21.203420639038086</td><td>20.067562103271484</td><td>18.998441696166992</td></tr>
 <tr><td>123.43892343048769</td><td>67.8956124547175</td><td>21.295581817626953</td><td>20.320524215698242</td><td>21.499958038330078</td><td>———</td><td>———</td><td>———</td><td>0.0069969087815645375</td><td>21.252859115600586</td><td>20.969985961914062</td><td>22.02094841003418</td><td>21.562204360961914</td><td>21.033828735351562</td><td>20.53368377685547</td></tr>
 <tr><td>123.45645641263971</td><td>67.88125775716301</td><td>19.707828521728516</td><td>18.38322639465332</td><td>20.979854583740234</td><td>3.0573802467382465</td><td>11.880533201188976</td><td>-7.393675877038789</td><td>0.009067637449834529</td><td>20.247432708740234</td><td>19.007596969604492</td><td>22.09683609008789</td><td>20.911039352416992</td><td>19.622631072998047</td><td>18.409908294677734</td></tr>
+<tr><td>123.41929334070166</td><td>67.89178083196823</td><td>16.634456634521484</td><td>15.85244083404541</td><td>17.314313888549805</td><td>1.2050908672850105</td><td>-5.567979326150691</td><td>-12.077443510338655</td><td>0.011695937379324848</td><td>16.615947723388672</td><td>16.201696395874023</td><td>17.64654541015625</td><td>17.0322265625</td><td>16.364782333374023</td><td>15.734864234924316</td></tr>
+<tr><td>123.47577477788626</td><td>67.89700846015798</td><td>19.78288459777832</td><td>18.77142333984375</td><td>20.774452209472656</td><td>0.976072598519347</td><td>-0.6670059327289899</td><td>-5.061786742454724</td><td>0.01196910051885525</td><td>19.925397872924805</td><td>19.189992904663086</td><td>21.412328720092773</td><td>20.509124755859375</td><td>19.557979583740234</td><td>18.662395477294922</td></tr>
+<tr><td>123.49999720110058</td><td>67.88908128599442</td><td>20.955039978027344</td><td>19.92739486694336</td><td>21.314929962158203</td><td>———</td><td>———</td><td>———</td><td>0.018839214907547107</td><td>20.92664909362793</td><td>20.54891586303711</td><td>21.889101028442383</td><td>21.31561279296875</td><td>20.68536949157715</td><td>20.090198516845703</td></tr>
 <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>123.10170381740276</td><td>67.99191724025559</td><td>15.049181938171387</td><td>14.546202659606934</td><td>15.380851745605469</td><td>0.7811855057495742</td><td>4.12753010552377</td><td>-4.718451642753252</td><td>0.16582829787733364</td><td>15.020024299621582</td><td>14.876336097717285</td><td>15.462923049926758</td><td>15.19316577911377</td><td>14.82618522644043</td><td>14.47619915008545</td></tr>
+<tr><td>123.07334676334233</td><td>67.80412654206437</td><td>15.187824249267578</td><td>14.685460090637207</td><td>15.519084930419922</td><td>0.6838498394764968</td><td>3.194437324222604</td><td>-9.645988862461584</td><td>0.16596869109759335</td><td>15.158766746520996</td><td>15.01546859741211</td><td>15.600707054138184</td><td>15.331504821777344</td><td>14.96498966217041</td><td>14.615436553955078</td></tr>
 <tr><td>123.0099793304518</td><td>67.87725952087362</td><td>16.725833892822266</td><td>16.19869613647461</td><td>17.086366653442383</td><td>0.2674047225333326</td><td>1.1434576673148544</td><td>0.10167435330908503</td><td>0.16615284375907366</td><td>16.691946029663086</td><td>16.527929306030273</td><td>17.18456268310547</td><td>16.885997772216797</td><td>16.494796752929688</td><td>16.1223087310791</td></tr>
 <tr><td>123.27317851734385</td><td>68.04252052176678</td><td>20.672447204589844</td><td>20.024959564208984</td><td>20.881399154663086</td><td>6.329621303711603</td><td>-19.149605794546076</td><td>-13.546277576323979</td><td>0.1663274681532839</td><td>20.641239166259766</td><td>20.489234924316406</td><td>21.104543685913086</td><td>20.822961807250977</td><td>20.446054458618164</td><td>20.08684730529785</td></tr>
 <tr><td>123.42685316330157</td><td>67.72385932226457</td><td>19.928386688232422</td><td>18.73736000061035</td><td>20.758501052856445</td><td>1.670723691410339</td><td>-1.8159542550555168</td><td>-6.6369528544514615</td><td>0.16636465699107802</td><td>20.079315185546875</td><td>19.33116340637207</td><td>21.579856872558594</td><td>20.667375564575195</td><td>19.706342697143555</td><td>18.80147933959961</td></tr>
@@ -1881,14 +1976,19 @@ some_stars = get_gaia(some_center)</div>
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <div><i>QTable length=875</i>
-<table id="table6375094832" class="table-striped table-bordered table-condensed">
+<table id="table5382259136" class="table-striped table-bordered table-condensed">
 <thead><tr><th>ra</th><th>dec</th><th>G_gaia_mag</th><th>RP_gaia_mag</th><th>BP_gaia_mag</th><th>parallax</th><th>pmra</th><th>pmdec</th><th>distance_from_center</th><th>r_sloan_mag</th><th>i_sloan_mag</th><th>g_sloan_mag</th><th>V_johnsoncousins_mag</th><th>R_johnsoncousins_mag</th><th>I_johnsoncousins_mag</th></tr></thead>
 <thead><tr><th>deg</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mas</th><th>mas / yr</th><th>mas / yr</th><th>deg</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th><th>mag</th></tr></thead>
 <thead><tr><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th><th>float32</th></tr></thead>
 <tr><td>258.8314799887317</td><td>4.960575338342743</td><td>12.996782302856445</td><td>11.68291187286377</td><td>14.912440299987793</td><td>68.29864790496704</td><td>580.202152322342</td><td>-749.7132787585067</td><td>0.004213552668599534</td><td>14.281705856323242</td><td>12.260824203491211</td><td>16.261287689208984</td><td>14.842987060546875</td><td>13.164945602416992</td><td>11.584444046020508</td></tr>
 <tr><td>258.82548059022554</td><td>4.959673415391515</td><td>19.814598083496094</td><td>18.7404842376709</td><td>20.92361831665039</td><td>-0.12201931576844059</td><td>0.7886772319541978</td><td>-5.90216430988526</td><td>0.005436667992000686</td><td>20.050561904907227</td><td>19.18158721923828</td><td>21.666542053222656</td><td>20.672658920288086</td><td>19.622066497802734</td><td>18.633102416992188</td></tr>
 <tr><td>258.8303453443598</td><td>4.969318799593391</td><td>18.467039108276367</td><td>17.849897384643555</td><td>18.9268798828125</td><td>0.32598400597497745</td><td>-2.3171063464633663</td><td>-2.8002450271574886</td><td>0.0055955384177896455</td><td>18.423870086669922</td><td>18.184314727783203</td><td>19.095197677612305</td><td>18.692920684814453</td><td>18.213462829589844</td><td>17.75888442993164</td></tr>
+<tr><td>258.8345934758168</td><td>4.965356067428126</td><td>19.528406143188477</td><td>18.817964553833008</td><td>20.048349380493164</td><td>0.9195919172227879</td><td>-0.13105104020166408</td><td>-2.780651379773647</td><td>0.005855234311897603</td><td>19.487468719482422</td><td>19.182281494140625</td><td>20.303503036499023</td><td>19.8166446685791</td><td>19.26363754272461</td><td>18.74053192138672</td></tr>
+<tr><td>258.8260166383157</td><td>4.969221589104122</td><td>21.041614532470703</td><td>19.73952293395996</td><td>22.038986206054688</td><td>———</td><td>———</td><td>———</td><td>0.0060354235140618676</td><td>21.349946975708008</td><td>20.386186599731445</td><td>23.041173934936523</td><td>21.99078941345215</td><td>20.874629974365234</td><td>19.82403564453125</td></tr>
+<tr><td>258.8331333378074</td><td>4.9586369446744065</td><td>17.20298957824707</td><td>16.52166175842285</td><td>17.653566360473633</td><td>0.31761288226776757</td><td>-2.6388754129907195</td><td>-1.8090458983625795</td><td>0.006755475541979879</td><td>17.1595516204834</td><td>16.897018432617188</td><td>17.88279151916504</td><td>17.450260162353516</td><td>16.944679260253906</td><td>16.46577262878418</td></tr>
 <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>258.78715760018787</td><td>4.873393994658311</td><td>17.87934684753418</td><td>17.42167091369629</td><td>18.19889259338379</td><td>0.17389487264683223</td><td>0.0072955718401033</td><td>-4.234450077111919</td><td>0.09961421632659982</td><td>17.856271743774414</td><td>17.734285354614258</td><td>18.245620727539062</td><td>18.00690460205078</td><td>17.665912628173828</td><td>17.34005355834961</td></tr>
+<tr><td>258.7464218179167</td><td>4.907450994487482</td><td>17.84841537475586</td><td>17.252365112304688</td><td>18.27007484436035</td><td>0.06147753884283451</td><td>-3.608316414650199</td><td>-0.6464691458675303</td><td>0.09969850607066381</td><td>17.80680274963379</td><td>17.59146499633789</td><td>18.422075271606445</td><td>18.052385330200195</td><td>17.600858688354492</td><td>17.172277450561523</td></tr>
 <tr><td>258.92231618290253</td><td>4.9280466284948</td><td>18.882038116455078</td><td>17.304718017578125</td><td>19.79410743713379</td><td>———</td><td>———</td><td>———</td><td>0.09974216009559722</td><td>19.330183029174805</td><td>18.19590950012207</td><td>21.128589630126953</td><td>19.99004554748535</td><td>18.764585494995117</td><td>17.611148834228516</td></tr>
 <tr><td>258.76972258111397</td><td>5.04440980073196</td><td>15.45716667175293</td><td>14.876876831054688</td><td>15.867270469665527</td><td>0.6121189038834349</td><td>-4.4141787868072395</td><td>-0.966707238307875</td><td>0.09977419054421784</td><td>15.41669750213623</td><td>15.212335586547852</td><td>16.00615119934082</td><td>15.651449203491211</td><td>15.212702751159668</td><td>14.796011924743652</td></tr>
 <tr><td>258.74330938418376</td><td>5.016032320994322</td><td>19.42879295349121</td><td>18.631284713745117</td><td>20.06942367553711</td><td>0.33799186631762845</td><td>2.2610459821616113</td><td>-6.655832456359581</td><td>0.09993209694364445</td><td>19.406841278076172</td><td>19.00441551208496</td><td>20.4157772064209</td><td>19.814477920532227</td><td>19.158958435058594</td><td>18.540180206298828</td></tr>
