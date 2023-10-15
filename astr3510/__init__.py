@@ -3,3 +3,4 @@ from .bucket import *
 from .psf import *
 from .gaia import *
 from .transit import *
+#from .loupe import *

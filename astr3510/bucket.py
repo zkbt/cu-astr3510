@@ -6,7 +6,7 @@ from scipy import stats
 
 def catch_photons_in_bucket(
     rate=1 * u.photon / u.s / u.m**2,
-    diameter=1.0 * u.m,
+    diameter=2.0 * u.m/np.sqrt(np.pi),
     time=100 * u.s,
     visualize=True,
     figure=None,
@@ -41,7 +41,7 @@ def catch_photons_in_bucket(
     if visualize:
         with quantity_support():
             # make a rectangle that at least includes the telescope
-            square = np.maximum(1.3 * diameter, 1.0 * u.m)
+            square = np.maximum(1.3 * diameter, 0.2 * u.m)
 
             # what's the expected total number of photons
             total_area = square * square
