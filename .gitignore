@@ -1,4 +1,5 @@
 sandbox 
+examples
 *.fits
 *my-snazzy-image*
 *.fit
