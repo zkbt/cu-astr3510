@@ -83,13 +83,16 @@ setup(
         "numpy",
         "scipy",
         "matplotlib>=3.5",
-        "astropy>=4.0",
-        "astroquery",
+        "astropy>=5.0",
+        "astroquery>=0.4",
+        "photutils>=1.9.0",
         "pandas",
         "tqdm",
+        "exoplanet-core",
+        "thefriendlystars"
     ],
     # what version of Python is required?
-    python_requires=">=3.6",  # f-strings are introduced in 3.6!
+    python_requires=">=3.8",  # f-strings are introduced in 3.6!
     # requirements in `key` will install with `pip install cu-astr3510[key]`
     extras_require={
         "develop": [
