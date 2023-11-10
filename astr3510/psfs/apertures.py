@@ -3,8 +3,9 @@ from ..imports import *
 from scipy.special import jv
 from astropy.visualization import *
 from scipy.fft import fft2, fftfreq, fftshift
+from scipy.signal import convolve2d
 #from photutils.profiles import RadialProfile
-
+import warnings
 
 class Aperture:
     def __init__(self, **kw):
@@ -15,20 +16,44 @@ class Aperture:
         
         self.wavelength = wavelength 
 
-        if dtheta is None:
-            N_y, N_x = np.array(np.shape(self.aperture))*supersample
-       #else:
-
         dx = np.median(np.diff(self.x))
         dy = np.median(np.diff(self.y))
-        k_x = fftshift(fftfreq(N_x, dx))
-        k_y = fftshift(fftfreq(N_y, dy))
 
-        self.theta_x = np.arcsin(k_x*wavelength).to('arcsec')
-        self.theta_y = np.arcsin(k_y*wavelength).to('arcsec')
+        skip = 1
+        if dtheta is None:
+            N_y, N_x = np.array(np.shape(self.aperture))*supersample
+        else:
+            N_x = int(wavelength/dx/dtheta.to_value('radian'))
+            N_y = int(wavelength/dy/dtheta.to_value('radian'))
+            if (N_x < 3) or (N_y < 3):
+                print(f'''
+                The large pixel size of dtheta={dtheta} is 
+                making it almost impossible to do the FFT. 
+                Consider remaking your aperture with a 
+                larger N=, so you'll still have resolution.
+                ''')
+            if (N_x < len(self.x)) or (N_y < len(self.y)):
+                skip = int(np.round(np.maximum(len(self.x)/N_x, len(self.y)/N_y)))
+                N_x *= skip 
+                N_y *= skip 
+                print(f'''
+                Be careful! dtheta={dtheta} is so big the FFT is weird!
+                Inflating by a factor of {skip}x.
+                ''')
+            if N_x % 2 == 0:
+                N_x += 1
+            if N_y % 2 == 0:
+                N_y += 1
+                
+        k_x = fftshift(fftfreq(N_x, dx))[::skip]
+        k_y = fftshift(fftfreq(N_y, dy))[::skip]
+
+        self.theta_x = (k_x*wavelength*u.radian).to('arcsec')
+        self.theta_y = (k_y*wavelength*u.radian).to('arcsec')
         self.theta_x2d, self.theta_y2d = np.meshgrid(self.theta_x, self.theta_y)
 
-        self.psf = np.abs(fftshift(fft2(self.aperture, (N_y, N_x))))**2
+        full_resolution_psf = np.abs(fftshift(fft2(self.aperture, (N_y, N_x))))**2
+        self.psf = convolve2d(full_resolution_psf, np.ones((skip, skip)), mode='same')[::skip, ::skip]
 
     def imshow_aperture_and_psf(self):
         fi, ax = plt.subplots(1, 2, figsize=(8,3), constrained_layout=True)

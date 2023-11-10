@@ -4,6 +4,5 @@ import astropy.units as u
 
 import os 
 
-print(__file__)
 astr3510_directory = os.path.dirname(__file__)
-print(astr3510_directory)
+#print(astr3510_directory)
