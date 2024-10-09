@@ -69,13 +69,13 @@ class Aperture:
             ::skip, ::skip
         ]
 
-    def imshow_aperture_and_psf(self, scale="log", save=True):
+    def imshow_aperture_and_psf(self, scale="log", save=True, zoom=1):
         fi, ax = plt.subplots(1, 2, figsize=(8, 3), constrained_layout=True)
         self.imshow_aperture(
             ax=ax[0],
             save=False,
         )
-        self.imshow_psf(ax=ax[1], save=False)
+        self.imshow_psf(ax=ax[1], save=False, zoom=zoom)
         plt.savefig(f"aperture+psf-imshow-{self.label()}.pdf")
 
     def display_psf(

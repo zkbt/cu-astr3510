@@ -4,6 +4,7 @@ examples
 *my-snazzy-image*
 *.fit
 docs-coming-soon
+*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
