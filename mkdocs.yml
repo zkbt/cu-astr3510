@@ -11,6 +11,7 @@ nav:
     - Concepts:
       - concepts/catching-photons.ipynb
       - concepts/chi-squared-fitting.ipynb
+      - concepts/psfs/psfs.ipynb
     - Tools:
       - tools/gaia.ipynb
     - reference.md
