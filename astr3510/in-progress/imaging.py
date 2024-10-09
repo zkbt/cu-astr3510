@@ -3,7 +3,7 @@ Tools for creating simulated images with noise,
 for conceptual signal-to-noise demonstrations.
 """
 from .imports import *
-from .psf import *
+from .psfs import *
 from chromatic.rainbows.visualizations.utilities import (
     get_animation_writer_and_displayer,
 )
@@ -17,6 +17,9 @@ from photutils.aperture import (
 
 
 def to_photons(x):
+    '''
+    Wrapper to cleanly convert electrons to photons, if necessary.
+    '''
     if "electron" in x.unit.to_string():
         return x * u.photon / u.electron
     elif "photon" in x.unit.to_string():
@@ -24,6 +27,9 @@ def to_photons(x):
 
 
 class Image:
+    '''
+    
+    '''
     keys = ["shape", "gain", "pixel_scale", "psf"]
 
     def __init__(
@@ -34,6 +40,9 @@ class Image:
         pixel_scale=0.5 * u.arcsec / u.pixel,
         psf=seeing(fwhm=2.0 * u.arcsec),
     ):
+        '''
+        Initialize a simulated astronomical image. 
+        '''
         self.shape = shape
         self.gain = gain
         self.pixel_scale = pixel_scale
@@ -43,12 +52,18 @@ class Image:
             c.image = self
 
     def describe_as_string(self):
+        '''
+        Describe the basics of this image. 
+        '''
         s = ""  # f"{self.__class__.__name__}:\n"
         for k in self.keys:
             s += f"{k}={getattr(self, k)}\n"
         return s
 
     def describe_everything_as_string(self):
+        '''
+        Describe all the components of this image. 
+        '''
         return "".join([c.describe_as_string() for c in [self] + self.components])
 
     def do_photometry(
@@ -61,6 +76,9 @@ class Image:
         visualize=True,
         **kwargs,
     ):
+        '''
+        Do photometry on a star in this image. 
+        '''
         self.aperture = CircularAperture(positions=positions, r=radius)
 
         self.photometry_results = aperture_photometry(
@@ -160,6 +178,10 @@ class Image:
         return flux, flux_model, uncertainty
 
     def plot_photometry_with_radius(self):
+        '''
+        Plot how the photometry depends on aperture radius
+        (ignoring sky subraction).
+        '''
         flux, model, uncertainty = [], [], []
         radii = np.arange(0.2, 15, 0.2)
         for r in radii:
@@ -211,9 +233,15 @@ class Image:
         plt.legend(frameon=False)
 
     def __repr__(self):
+        '''
+        Represent this image as a string.
+        '''
         return f"Image {self.shape} = {'+'.join([str(x) for x in self.components])}"
 
     def mu(self, t=1 * u.s):
+        '''
+        Calculate the expectation value for this image, for an exposure time. 
+        '''
         return (
             np.sum(
                 np.array(
@@ -229,6 +257,9 @@ class Image:
         )
 
     def sigma(self, t=1 * u.s):
+        '''
+        Calculate the uncertainty for this image, for an exposure time. 
+        '''
         return np.sqrt(
             np.sum(
                 np.array(
@@ -254,6 +285,9 @@ class Image:
         photometry_radius=3,
         **kwargs,
     ):
+        '''
+        Display a (noisy) realization of this image. 
+        '''
         if ax is None:
             fi, ax = plt.subplots(1, 1, figsize=(4, 2.5), dpi=300)
 
@@ -296,6 +330,9 @@ class Image:
         cmap="gray",
         **kwargs,
     ):
+        '''
+        Build up the model, uncertainty, and realized data for an exposure (and display).
+        '''
         time = np.max(t)
         model = self.mu(t=time)
         uncertainty = self.sigma(t=time)
@@ -428,6 +465,7 @@ class Image:
 
         return imshowed
 
+        # FIXME -- allow for animations? 
         if np.size(t) > 1:
             writer, displayer = get_animation_writer_and_displayer(filename)
             with writer.saving(fi, filename, fi.get_dpi()):
@@ -455,6 +493,9 @@ class Image:
                 display(displayer(filename))
 
     def imshow_components_with_models(self, **kwargs):
+        '''
+        
+        '''
         rows = 4
         cols = len(self.components) + 2
         fi, ax = plt.subplots(
@@ -489,6 +530,9 @@ class Image:
             a.set_title("$E_{light}$")
 
     def realization(self, *args, **kwargs):
+        '''
+        Create a noisy realization of this image. 
+        '''
         mu = self.mu(*args, **kwargs).to_value(self.unit)
         sigma = self.sigma(*args, **kwargs).to_value(self.unit)
         return np.random.normal(mu, sigma) * self.unit
